@@ -25,13 +25,15 @@ function gotPoses(results)
   if(results.length > 0)
   {
     console.log(results);
-    noseX = results[0].pose.nose.x;
+    noseX = results[0].pose.nose.x-40;
     noseY = results[0].pose.nose.y;
   }
+  //the above code is to keep the mustache where my nose is (note for future)
 }
 
 function draw() {
   image(video, 0, 0, 300, 300);
+  image(clown_nose, noseX, noseY, 80, 35);
 }
 
 function take_snapshot(){    
